@@ -1,0 +1,55 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+.env
+server/runtime/
+playwright-report/
+test-results/
+
+# Java / Maven
+target/
+*.class
+.idea/
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
+
+# Android
+.gradle/
+build/
+local.properties
+.idea/modules.xml
+.idea/workspace.xml
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# Node / Vue
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.env.local
+.env.*.local
+
+# Uploads (runtime files)
+server/src/main/resources/static/uploads/
+server/server/src/main/resources/static/uploads/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Local-only history and credentials
+.trae/
+resumes/
+*.keystore
+*.jks
+server/yisu_hotel.sql

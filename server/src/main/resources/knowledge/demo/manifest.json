@@ -1,0 +1,8 @@
+{
+  "dataKind":"demo",
+  "documents":[
+    {"id":"xuanwu","hotelId":1,"title":"演示·玄武湖酒店入住与取消须知","file":"xuanwu.md","source":"演示资料 v1 / 酒店1 / 非真实服务承诺"},
+    {"id":"chengnan","hotelId":2,"title":"演示·城南旅居入住须知","file":"chengnan.md","source":"演示资料 v1 / 酒店2 / 非真实服务承诺"},
+    {"id":"xihu","hotelId":3,"title":"演示·西湖驿站入住须知","file":"xihu.md","source":"演示资料 v1 / 酒店3 / 非真实服务承诺"}
+  ]
+}

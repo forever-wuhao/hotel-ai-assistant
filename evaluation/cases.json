@@ -1,0 +1,22 @@
+[
+  {"id":"city-budget", "turns":[{"message":"推荐南京酒店，每晚预算400元", "tools":["searchHotels"], "citationIds":["hotel:2","hotel:1"], "contains":["399","259"], "excludes":["未发布酒店"]}]},
+  {"id":"strict-budget", "turns":[{"message":"南京每晚预算300元", "tools":["searchHotels"], "citationIds":["hotel:2"], "excludes":["玄武湖"]}]},
+  {"id":"no-budget-match", "turns":[{"message":"南京每晚预算100元", "tools":["searchHotels"], "citationIds":[], "contains":["没有满足","尚未放宽"]}]},
+  {"id":"different-city", "turns":[{"message":"杭州预算600元", "tools":["searchHotels"], "citationIds":["hotel:3"]}]},
+  {"id":"clarify-city", "turns":[{"message":"帮我推荐酒店", "tools":[], "citationIds":[], "contains":["城市"]}]},
+  {"id":"change-budget", "turns":[{"message":"南京预算500元", "tools":["searchHotels"], "citationIds":["hotel:2","hotel:1"]},{"message":"预算改为300元", "tools":["searchHotels"], "citationIds":["hotel:2"]}]},
+  {"id":"change-city", "turns":[{"message":"南京预算600元", "tools":["searchHotels"]},{"message":"换成杭州", "tools":["searchHotels"], "citationIds":["hotel:3"]}]},
+  {"id":"published-details", "turns":[{"message":"酒店1的详情", "tools":["hotelDetails"], "citationIds":["hotel:1"], "contains":["玄武湖"]}]},
+  {"id":"unpublished-is-private", "turns":[{"message":"酒店4的详情", "tools":["hotelDetails"], "failedCodes":["HOTEL_NOT_FOUND"], "citationIds":[], "contains":["没有找到"], "excludes":["私人资料"]}]},
+  {"id":"policy-hotel1", "turns":[{"message":"酒店1取消退订政策", "tools":["searchPolicies"], "citationPrefix":"policy:xuanwu:", "contains":["18:00"], "excludes":["确认后不可免费取消"]}]},
+  {"id":"policy-hotel2", "turns":[{"message":"酒店2取消退订政策", "tools":["searchPolicies"], "citationPrefix":"policy:chengnan:", "contains":["不可免费取消"], "excludes":["18:00"]}]},
+  {"id":"clarify-hotel", "turns":[{"message":"几点退房", "tools":[], "citationIds":[], "contains":["酒店名称或编号"]}]},
+  {"id":"policy-context", "turns":[{"message":"酒店2的详情", "tools":["hotelDetails"]},{"message":"它的取消政策", "tools":["searchPolicies"], "citationPrefix":"policy:chengnan:"}]},
+  {"id":"known-inventory", "turns":[{"message":"查询酒店1在{{today+1}}至{{today+3}}的房态", "tools":["roomAvailability"], "citationPrefix":"inventory:1:", "contains":["双床房","不足","798"]}]},
+  {"id":"unknown-inventory", "turns":[{"message":"查询酒店1在{{today+30}}至{{today+32}}的房态", "tools":["roomAvailability"], "citationPrefix":"inventory:1:", "contains":["库存不完整","无法确认"]}]},
+  {"id":"clarify-dates", "turns":[{"message":"酒店1有房吗", "tools":[], "citationIds":[], "contains":["入住和退房日期"]}]},
+  {"id":"invalid-dates", "turns":[{"message":"查询酒店1在{{today+3}}至{{today+1}}的房态", "tools":["roomAvailability"], "failedCodes":["INVALID_ARGUMENT"], "citationIds":[]}]},
+  {"id":"missing-map-key", "turns":[{"message":"酒店1到南京站的路线", "tools":["walkingRoute"], "failedCodes":["MAP_NOT_CONFIGURED"], "citationIds":[], "contains":["尚未配置"]}]},
+  {"id":"multiple-tools", "turns":[{"message":"酒店1在{{today+1}}至{{today+3}}的房态和取消政策", "tools":["roomAvailability","searchPolicies"], "contains":["库存","18:00"]}]},
+  {"id":"readonly-boundary", "turns":[{"message":"帮我取消订单并退款", "tools":[], "citationIds":[], "contains":["正式渠道"]}]}
+]

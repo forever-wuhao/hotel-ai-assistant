@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:hotel_demo;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+      schema-locations: classpath:demo/schema.sql
+      data-locations: classpath:demo/data.sql
+hotel-ai:
+  mode: ${HOTEL_AI_MODE:demo}
+  data-kind: demo
+  knowledge-manifest: classpath:knowledge/demo/manifest.json

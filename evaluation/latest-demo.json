@@ -1,0 +1,495 @@
+{
+  "generatedAt": "2026-11-16T13:56:24.894288+00:00",
+  "mode": "demo",
+  "dataKind": "demo",
+  "scope": "Fixture-based integration checks; scripted demo is NOT a model-quality benchmark. Expected failed tools are counted separately from task checks.",
+  "tasks": 20,
+  "passed": 20,
+  "taskCheckPassRate": 1.0,
+  "toolCalls": 20,
+  "successfulToolCalls": 17,
+  "rawToolSuccessRate": 0.85,
+  "latencyMs": {
+    "median": 16.2,
+    "p95": 108.37
+  },
+  "results": [
+    {
+      "id": "city-budget",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "推荐南京酒店，每晚预算400元",
+          "answer": "演示答复：\n演示·城南旅居，南京，资料起价259.00元/晚；实际日期价格与房态需进一步查询。\n演示·玄武湖酒店，南京，资料起价399.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 27
+            }
+          ],
+          "citationIds": [
+            "hotel:2",
+            "hotel:1"
+          ],
+          "elapsedMs": 108.37
+        }
+      ]
+    },
+    {
+      "id": "strict-budget",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "南京每晚预算300元",
+          "answer": "演示答复：\n演示·城南旅居，南京，资料起价259.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:2"
+          ],
+          "elapsedMs": 19.9
+        }
+      ]
+    },
+    {
+      "id": "no-budget-match",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "南京每晚预算100元",
+          "answer": "演示答复：\n没有满足城市和预算的酒店，尚未放宽条件。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [],
+          "elapsedMs": 14.21
+        }
+      ]
+    },
+    {
+      "id": "different-city",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "杭州预算600元",
+          "answer": "演示答复：\n演示·西湖驿站，杭州，资料起价499.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:3"
+          ],
+          "elapsedMs": 15.65
+        }
+      ]
+    },
+    {
+      "id": "clarify-city",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "帮我推荐酒店",
+          "answer": "想查哪个城市的酒店？也可以提供每晚预算。离线演示支持南京和杭州。",
+          "tools": [],
+          "citationIds": [],
+          "elapsedMs": 15.27
+        }
+      ]
+    },
+    {
+      "id": "change-budget",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "南京预算500元",
+          "answer": "演示答复：\n演示·城南旅居，南京，资料起价259.00元/晚；实际日期价格与房态需进一步查询。\n演示·玄武湖酒店，南京，资料起价399.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:2",
+            "hotel:1"
+          ],
+          "elapsedMs": 16.3
+        },
+        {
+          "message": "预算改为300元",
+          "answer": "演示答复：\n演示·城南旅居，南京，资料起价259.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:2"
+          ],
+          "elapsedMs": 14.38
+        }
+      ]
+    },
+    {
+      "id": "change-city",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "南京预算600元",
+          "answer": "演示答复：\n演示·城南旅居，南京，资料起价259.00元/晚；实际日期价格与房态需进一步查询。\n演示·玄武湖酒店，南京，资料起价399.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:2",
+            "hotel:1"
+          ],
+          "elapsedMs": 15.82
+        },
+        {
+          "message": "换成杭州",
+          "answer": "演示答复：\n演示·西湖驿站，杭州，资料起价499.00元/晚；实际日期价格与房态需进一步查询。",
+          "tools": [
+            {
+              "name": "searchHotels",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:3"
+          ],
+          "elapsedMs": 4.93
+        }
+      ]
+    },
+    {
+      "id": "published-details",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店1的详情",
+          "answer": "演示答复：\n演示·玄武湖酒店；地址：南京市玄武区演示路1号；设施：Wifi,停车场,早餐",
+          "tools": [
+            {
+              "name": "hotelDetails",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 2
+            }
+          ],
+          "citationIds": [
+            "hotel:1"
+          ],
+          "elapsedMs": 28.97
+        }
+      ]
+    },
+    {
+      "id": "unpublished-is-private",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店4的详情",
+          "answer": "演示答复：\n没有找到可公开查询的酒店。",
+          "tools": [
+            {
+              "name": "hotelDetails",
+              "success": false,
+              "code": "HOTEL_NOT_FOUND",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [],
+          "elapsedMs": 28.95
+        }
+      ]
+    },
+    {
+      "id": "policy-hotel1",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店1取消退订政策",
+          "answer": "演示答复：\n# 取消与退款\n演示标准价房型可在入住前一天18:00前免费取消。特惠套餐可能有不同规则，应核对具体房型和订单条款。客服助手只查询资料，不执行取消或退款。\n# 入住与退房时间\n此文档仅为虚构演示资料。演示·玄武湖酒店的入住时间为14:00后，退房时间为12:00前。提前入住或延迟退房需由前台确认，系统不能自行承诺。",
+          "tools": [
+            {
+              "name": "searchPolicies",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 124
+            }
+          ],
+          "citationIds": [
+            "policy:xuanwu:1",
+            "policy:xuanwu:0"
+          ],
+          "elapsedMs": 139.56
+        }
+      ]
+    },
+    {
+      "id": "policy-hotel2",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店2取消退订政策",
+          "answer": "演示答复：\n# 特惠取消政策\n演示经济大床房为特惠价，确认后不可免费取消。特殊情况需由前台人工处理。不能套用其他酒店的免费取消规则。",
+          "tools": [
+            {
+              "name": "searchPolicies",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "policy:chengnan:1"
+          ],
+          "elapsedMs": 16.2
+        }
+      ]
+    },
+    {
+      "id": "clarify-hotel",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "几点退房",
+          "answer": "请提供酒店名称或编号，例如“酒店1的取消政策”。",
+          "tools": [],
+          "citationIds": [],
+          "elapsedMs": 3.09
+        }
+      ]
+    },
+    {
+      "id": "policy-context",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店2的详情",
+          "answer": "演示答复：\n演示·城南旅居；地址：南京市秦淮区演示路2号；设施：Wifi,自助洗衣",
+          "tools": [
+            {
+              "name": "hotelDetails",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "hotel:2"
+          ],
+          "elapsedMs": 28.4
+        },
+        {
+          "message": "它的取消政策",
+          "answer": "演示答复：\n# 特惠取消政策\n演示经济大床房为特惠价，确认后不可免费取消。特殊情况需由前台人工处理。不能套用其他酒店的免费取消规则。",
+          "tools": [
+            {
+              "name": "searchPolicies",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 1
+            }
+          ],
+          "citationIds": [
+            "policy:chengnan:1"
+          ],
+          "elapsedMs": 17.64
+        }
+      ]
+    },
+    {
+      "id": "known-inventory",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "查询酒店1在2026-11-17至2026-11-19的房态",
+          "answer": "演示答复：\n2026-11-17至2026-11-19，湖景大床房：库存快照满足1间，2晚总计798.00元；双床房：至少一天剩余房量不足。本查询不锁房，价格和库存可能变化。",
+          "tools": [
+            {
+              "name": "roomAvailability",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 5
+            }
+          ],
+          "citationIds": [
+            "inventory:1:2026-11-17:2026-11-19"
+          ],
+          "elapsedMs": 33.74
+        }
+      ]
+    },
+    {
+      "id": "unknown-inventory",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "查询酒店1在2026-12-16至2026-12-18的房态",
+          "answer": "演示答复：\n2026-12-16至2026-12-18，湖景大床房：日期库存不完整，无法确认可订；双床房：日期库存不完整，无法确认可订。本查询不锁房，价格和库存可能变化。",
+          "tools": [
+            {
+              "name": "roomAvailability",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 1
+            }
+          ],
+          "citationIds": [
+            "inventory:1:2026-12-16:2026-12-18"
+          ],
+          "elapsedMs": 26.95
+        }
+      ]
+    },
+    {
+      "id": "clarify-dates",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店1有房吗",
+          "answer": "请提供入住和退房日期，例如2026-12-01至2026-12-03。",
+          "tools": [],
+          "citationIds": [],
+          "elapsedMs": 14.46
+        }
+      ]
+    },
+    {
+      "id": "invalid-dates",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "查询酒店1在2026-11-19至2026-11-17的房态",
+          "answer": "演示答复：\n请提供未来的入住日期、其后的退房日期及1至10间房，最多查询30晚。",
+          "tools": [
+            {
+              "name": "roomAvailability",
+              "success": false,
+              "code": "INVALID_ARGUMENT",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [],
+          "elapsedMs": 15.67
+        }
+      ]
+    },
+    {
+      "id": "missing-map-key",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店1到南京站的路线",
+          "answer": "演示答复：\n地图服务尚未配置，无法核实步行距离和时长。",
+          "tools": [
+            {
+              "name": "walkingRoute",
+              "success": false,
+              "code": "MAP_NOT_CONFIGURED",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [],
+          "elapsedMs": 4.83
+        }
+      ]
+    },
+    {
+      "id": "multiple-tools",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "酒店1在2026-11-17至2026-11-19的房态和取消政策",
+          "answer": "演示答复：\n2026-11-17至2026-11-19，湖景大床房：库存快照满足1间，2晚总计798.00元；双床房：至少一天剩余房量不足。本查询不锁房，价格和库存可能变化。\n# 入住与退房时间\n此文档仅为虚构演示资料。演示·玄武湖酒店的入住时间为14:00后，退房时间为12:00前。提前入住或延迟退房需由前台确认，系统不能自行承诺。\n# 取消与退款\n演示标准价房型可在入住前一天18:00前免费取消。特惠套餐可能有不同规则，应核对具体房型和订单条款。客服助手只查询资料，不执行取消或退款。\n# 设施与早餐\n演示酒店提供免费WiFi和停车场。湖景大床房和双床房的示例价格包含两份早餐，早餐供应时间为07:00至10:00。不能把此说明当作真实酒店承诺。",
+          "tools": [
+            {
+              "name": "roomAvailability",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 1
+            },
+            {
+              "name": "searchPolicies",
+              "success": true,
+              "code": "OK",
+              "elapsedMs": 0
+            }
+          ],
+          "citationIds": [
+            "inventory:1:2026-11-17:2026-11-19",
+            "policy:xuanwu:0",
+            "policy:xuanwu:1",
+            "policy:xuanwu:2"
+          ],
+          "elapsedMs": 27.95
+        }
+      ]
+    },
+    {
+      "id": "readonly-boundary",
+      "passed": true,
+      "errors": [],
+      "turns": [
+        {
+          "message": "帮我取消订单并退款",
+          "answer": "演示咨询只查询酒店资料，订单和付款请通过酒店正式渠道办理。",
+          "tools": [],
+          "citationIds": [],
+          "elapsedMs": 13.78
+        }
+      ]
+    }
+  ]
+}
